@@ -1,60 +1,79 @@
+# Root path to search, if you search from the drive root it could take a while
 $RootSeachPath = "C:\"
 
-$KnownAffectedHashes = @(
-    '685125B7B8BBD7C2F58259937090AC2AE9BCB129'	
-    '7058796A0AA49EA21EA2CC7BF9DECE0D3B8942AE'
-    'B5F9C15E1FB18D84193AC10E4BFB88AF1724F5CD'
-    '80B690D982B030FB2F04854407744FF44E0B72EA'
-    '8F87799C2BD24C120812ED3D5271B743CFC999B5'
-    'B853DEC96E815981280FB9A1CC08332A6ED946F9'
-    '1FB514BFBEC10815D68953ED2FC4DD8C98EE245F'
-    'A727FE8E718B18D541F67077C99B2CA129F77065'
-    'F6ED9C56C8D58C4670059DDF417DF23C9A78FF30'
-    '678861BA1B2E1FCCB594BB0CA03114BB05DA9695'
-    '7621FE28CE0122D96006BDB56C8E2CFB2A3AFB92'
-    '4363CDF913A584FE8FA72CF4C0EAAE181EF7D1EB'
-    '2E8D52ACFC8C2BBBAA7BAF9F3678826C354F5405'
-    '895130076EFAF6DCAFB741ED7E97F2D346903708'
-    '13521C5364501478E28C77A7F86B90B6ED5DBB77'
-    '31823DCDE108F2EA4A5801D1ACC77869D7696533'
-    'C707664E020218F8529B9A5E55016EE15F0F82AC'
-    '58A3E964DB5307E30650817C5DAAC1E8C8EDE648'
-    '0D99532BA3603F27BEBF4CDD3653FEB0E0B84CF6'
-    'A5334910F90944575147FD1C1AEF9F407C24DB99'
-    '7ED845DE1DFE070D43511FAB321784E6C4118398'
-    'A7CB258B9C36F49C148834A3A35B53FE73C28777'
-    '2B557BF1023C3A3A0F7F200FAFCD7641B89CBB83'
-    '00A91369F655EB1639C6AECE5C5EB5108DB18306'
-    'A3F2B4E64C61A7FC1ED8F1E5BA371933404ED98A'
-    '2BE463A710BE42BB6B4831B980F0D270B98FF233'
-    '4AC28FF2F1DDF05DAE3043A190451E8C46B73C31'
-    '979FC0CF8460302E4FFBFE38C1B66A99450B0BB7'
-    'FF857555CEC4635C272286A260DBD7979C89D5B8'
-    '8C59F9DB4E5EEBF7E99AA0ED2EB129BD5D8EF4F8'
-    '989BBD2B84EBA4B88A4B2A889393FAC5B297E1DF'
-    '3B1C23B9117786E23CC3BE6224B484D77C50C1F2'
-    '38B9C3790C99CEF205A890DB876C89FD9238706C'
-    '5BCFEFCD7474C2F439576A1839EA0AEEEC07F3B6'
-    '73FE23297CCF73BAD25A04E089D9627F8BF3041F'
-    'C28F281548582EC68376E66DBDE48BE24FCDB457'
-    'EF568FACA168DEEE9ADBE6F42CA8F4DE6CA4557B'
-    '5EB5AB96F8FC087135EF969ED99C76B64D255D44'
-    '16F7B2F63B0290281294C2CBC4F26BA32F71DE34'
-    '6556D71742808E4324EABC500BD7F2CC8C004440'
-    '94BC1813A537B3B5C04F9B4ADEAD3C434F364A70'
-    'C476BD8ACB6E7E55F14195A88FA8802687FCF542'
-    'E7DC681A6DA4F2F203DCCD1068A1EA090F67A057'
+# Log4j Core versions known to be impacted
+$KnownImpactedVersions = @(
+    'log4j-core-2.0-alpha2.jar'
+    'log4j-core-2.0-beta1.jar'
+    'log4j-core-2.0-beta2.jar'
+    'log4j-core-2.0-beta3.jar'
+    'log4j-core-2.0-beta4.jar'
+    'log4j-core-2.0-beta5.jar'
+    'log4j-core-2.0-beta6.jar'
+    'log4j-core-2.0-beta7.jar'
+    'log4j-core-2.0-beta8.jar'
+    'log4j-core-2.0-beta9.jar'
+    'log4j-core-2.0.jar'
+    'log4j-core-2.0-rc1.jar'
+    'log4j-core-2.0-rc2.jar'
+    'log4j-core-2.0.1.jar'
+    'log4j-core-2.0.2.jar'
+    'log4j-core-2.1.jar'
+    'log4j-core-2.2.jar'
+    'log4j-core-2.3.jar'
+    'log4j-core-2.4.jar'
+    'log4j-core-2.4.1.jar'
+    'log4j-core-2.5.jar'
+    'log4j-core-2.6.jar'
+    'log4j-core-2.6.1.jar'
+    'log4j-core-2.6.2.jar'
+    'log4j-core-2.7.jar'
+    'log4j-core-2.8.jar'
+    'log4j-core-2.8.1.jar'
+    'log4j-core-2.8.2.jar'
+    'log4j-core-2.9.0.jar'
+    'log4j-core-2.9.1.jar'
+    'log4j-core-2.10.0.jar'
+    'log4j-core-2.11.0.jar'
+    'log4j-core-2.11.1.jar'
+    'log4j-core-2.11.2.jar'
+    'log4j-core-2.12.0.jar'
+    'log4j-core-2.12.1.jar'
+    'log4j-core-2.13.0.jar'
+    'log4j-core-2.13.1.jar'
+    'log4j-core-2.13.2.jar'
+    'log4j-core-2.13.3.jar'
+    'log4j-core-2.14.0.jar'
+    'log4j-core-2.14.1.jar'
+    'log4j-core-2.0-alpha1.jar'
 )
 
-Write-Host "Scanning Files within $($RootSeachPath) for exploits in log4j-core-*.jar:"
+# Impacted Class name within Log4j Core
+$KnownImpactedClass = "jndilookup.class"
 
+# Search the root location for all log4j Core version files
+Write-Host "Scanning Files within $($RootSeachPath) for exploits in log4j-core-*.jar:"
 $FilesToInspect = Get-ChildItem -Path $RootSeachPath -Include log4j-core-*.jar -File -Recurse
 
+# Loop through any Log4j Core jar files found in the search
 ForEach ($file in $FilesToInspect) {
-    If ( $KnownAffectedHashes.Contains((Get-FileHash $file.FullName -Algorithm SHA1).Hash) ){
-	    Write-Host "WARNING: Exploit detected at $($file.FullName)" -ForegroundColor red
-	}
-	Else {
-		Write-Host "...$($file.FullName) is OK"
-	}
+
+    # Filter to only look at file versions by known impacted versions
+    If ( $KnownImpactedVersions.Contains($file.name) ){
+        Write-Host "A potentially exploited version was detected at $($file.FullName)" -ForegroundColor yellow
+
+        # If the version potentially contains the exploit it is expanded to look for the impacted class
+        $TempExpandPath = "$($env:TEMP)\$($file.name)\"
+        Write-Host "...Expanding\Inspecting contents at $($TempExpandPath)"
+        Expand-Archive -Path $file.FullName -DestinationPath $TempExpandPath -Force
+
+        # Look through the expanded jar file contents for the impacted class
+        $ClassResults = Get-ChildItem -Path $TempExpandPath -Include $KnownImpactedClass -File -Recurse
+        If ( $ClassResults.Count -gt 0 ) {
+            Write-Host "$($file.name) at $($file.FullName) contains the exploited class $KnownImpactedClass" -ForegroundColor red
+        }
+        
+        # Clean Up the expanded archive folder
+        Remove-Item -LiteralPath $TempExpandPath -Force -Recurse
+    }
 }
